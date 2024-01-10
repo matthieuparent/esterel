@@ -1,0 +1,34 @@
+/* ==========================================================================
+   COLORS / SETTINGS
+   ========================================================================== */
+
+:root {
+    // Couleur de base
+    --color-white: #fff;
+    --color-black: #000;
+    --color-gray: rgba(0, 0, 0, 0.7);
+
+    // Couleurs du projet
+    --color-primary: #41728b;
+    --color-primary-light: #8fafb0;
+
+    --color-secondary: #9ba577;
+    --color-secondary-light: #dce9d4;
+
+    --color-tertiary: #af6682;
+
+    --color-facebook: #003352;
+    --color-linkedin: #00ae86;
+    --color-instagram: #ee522f;
+
+    --section-highlight: var(--color-primary);
+}
+
+.highlight-vert {
+    --section-highlight: var(--color-secondary);
+    --section-highlight-light: var(--color-secondary-light);
+}
+.highlight-rose {
+    --section-highlight: var(--color-tertiary);
+    --section-highlight-light: rgba(255, 255, 255, 0.6);
+}

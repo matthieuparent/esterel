@@ -1,0 +1,72 @@
+# Translation of Plugins - Simple Sitemap &#8211; Create a Responsive HTML Sitemap - Stable (latest release) in English (Canada)
+# This file is distributed under the same license as the Plugins - Simple Sitemap &#8211; Create a Responsive HTML Sitemap - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2021-03-04 12:20:42+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.0-alpha.1\n"
+"Language: en_CA\n"
+"Project-Id-Version: Plugins - Simple Sitemap &#8211; Create a Responsive HTML Sitemap - Stable (latest release)\n"
+
+#: api/classes/modules/create-duplicate-post.php:157
+msgid "Duplicate"
+msgstr "Duplicate"
+
+#: lib/classes/plugin-admin-pages/class-settings.php:240
+msgid "Displays a list of taxonomy terms for any registered taxonomy (e.g. categories)."
+msgstr "Displays a list of taxonomy terms for any registered taxonomy (e.g. categories)."
+
+#: lib/classes/plugin-admin-pages/class-settings.php:234
+msgid "Displays a list of posts grouped by category, OR tags."
+msgstr "Displays a list of posts grouped by category, OR tags."
+
+#. translators: %d: ID of a post
+#: shared/class-wpgo-walker-page.php:100
+msgid "#%d (no title)"
+msgstr "#%d (no title)"
+
+#: lib/classes/plugin-admin-pages/class-settings.php:246
+msgid "Displays a sitemap based on a nav menu."
+msgstr "Displays a sitemap based on a nav menu."
+
+#: api/classes/links.php:26 shared/links.php:56
+msgid "Get Started"
+msgstr "Get Started"
+
+#: lib/classes/plugin-admin-pages/class-settings.php:252
+msgid "Displays a list of child pages for a specific parent page."
+msgstr "Displays a list of child pages for a specific parent page."
+
+#: lib/classes/plugin-admin-pages/class-settings.php:230
+msgid "Displays a list of posts for one or more post types."
+msgstr "Displays a list of posts for one or more post types."
+
+#. Author URI of the plugin
+msgid "http://www.wpgoplugins.com"
+msgstr "http://www.wpgoplugins.com"
+
+#. Description of the plugin
+msgid "HTML sitemap to display content as a single linked list of posts, pages, or custom post types. You can even display posts in groups sorted by taxonomy!"
+msgstr "HTML sitemap to display content as a single linked list of posts, pages, or custom post types. You can even display posts in groups sorted by taxonomy!"
+
+#. Author of the plugin
+msgid "David Gwyer"
+msgstr "David Gwyer"
+
+#. Plugin URI of the plugin
+msgid "http://wordpress.org/plugins/simple-sitemap/"
+msgstr "http://wordpress.org/plugins/simple-sitemap/"
+
+#. Plugin Name of the plugin
+#: lib/classes/plugin-admin-pages/class-settings.php:82
+#: lib/classes/plugin-admin-pages/class-settings.php:156
+#: lib/classes/register-blocks.php:44
+msgid "Simple Sitemap"
+msgstr "Simple Sitemap"
+
+#: lib/classes/plugin-admin-pages/class-settings.php:84
+msgid "Simple Sitemap Settings Page"
+msgstr "Simple Sitemap Settings Page"

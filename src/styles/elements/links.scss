@@ -1,0 +1,36 @@
+/* ==========================================================================
+   LINKS / ELEMENTS
+   Style de base de tous les liens et bouton du site
+   ========================================================================== */
+
+a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+        color: var(--color-primary);
+        text-decoration: underline;
+    }
+}
+
+.link {
+    font-weight: bold;
+    font-family: var(--font-primary);
+    @include fluid-type(16px, 20px);
+    transition: all 0.3s $ease-out-quad;
+
+    &--arrow {
+        .icon {
+            margin-left: 4px;
+            transition: all 0.3s $ease-out-quad;
+        }
+    }
+
+    &:hover {
+        color: inherit;
+        text-decoration: none;
+        .icon {
+            transform: translateX(10px);
+        }
+    }
+}

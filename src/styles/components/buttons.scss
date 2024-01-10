@@ -1,0 +1,18 @@
+/* ==========================================================================
+   buttons / components
+   ========================================================================== */
+.button {
+    text-transform: uppercase;
+    font-family: var(--font-primary);
+    @include fluid-type(14px, 20px);
+    background-color: var(--color-primary-light);
+    color: var(--color-white);
+    padding: 15px 18px;
+    transition: all 0.3s ease-out;
+
+    &:hover {
+        text-decoration: none;
+        color: var(--color-white);
+        background-color: var(--color-primary);
+    }
+}

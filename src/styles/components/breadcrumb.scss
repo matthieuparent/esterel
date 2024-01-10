@@ -1,0 +1,27 @@
+/* ==========================================================================
+   breadcrumbs / component
+   ========================================================================== */
+
+.breadcrumbs {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 0;
+    padding-left: 0;
+
+    .divider {
+        width: 4px;
+        height: 4px;
+        background: var(--color-white);
+        opacity: 0.6;
+        display: block;
+        border-radius: 100%;
+    }
+
+    a:hover {
+        color: white;
+        text-decoration: none;
+        opacity: 0.6;
+    }
+}

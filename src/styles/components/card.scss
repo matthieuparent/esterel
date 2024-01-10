@@ -1,0 +1,99 @@
+/* ==========================================================================
+   card / components
+   ========================================================================== */
+
+.card {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    .card__media {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.8s $ease-out-quad;
+        }
+
+        &::after {
+            background: linear-gradient(
+                180deg,
+                rgba(0, 0, 0, 0.15) 76.56%,
+                rgba(0, 0, 0, 0.85) 100%
+            );
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: '';
+        }
+    }
+    .card__title,
+    .card__content {
+        box-sizing: border-box;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 90%;
+        height: 100%;
+        display: flex;
+        align-items: flex-end;
+        z-index: 1;
+        padding: var(--spacing-nm);
+        padding-right: var(--spacing-lg);
+    }
+    .card__title {
+        transition: all 0.5s $ease-out-quad;
+    }
+    .card__content {
+        background: var(--color-primary);
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        transform: translateX(-100%);
+        transition: all 0.4s $ease-out-quad;
+        .title-tertiary {
+            width: 90%;
+            margin-bottom: var(--spacing-md);
+        }
+        .link {
+            margin-top: auto;
+            color: inherit;
+        }
+        h3,
+        p,
+        .link {
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: all 0.4s $ease-out-quad 0.2s;
+        }
+        p {
+            transition-delay: 0.3s;
+        }
+        .link {
+            transition-delay: 0.4s;
+        }
+    }
+    &:hover {
+        .card__title {
+            opacity: 0;
+            transform: translateX(-130%);
+        }
+        img {
+            transform: scale(1.1);
+        }
+        .card__content {
+            transform: translateX(0);
+            h3,
+            p,
+            .link {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    }
+}

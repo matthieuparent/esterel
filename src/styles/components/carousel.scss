@@ -1,0 +1,24 @@
+/* ==========================================================================
+   carousel / components
+   ========================================================================== */
+
+.swiper-pagination {
+    margin-top: 90px;
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    .swiper-pagination-bullet {
+        width: 13px;
+        height: 13px;
+        border-radius: 100%;
+        background: #c4c4c4;
+        display: block;
+        &-active {
+            background: var(--color-primary);
+        }
+    }
+}
+.swiper-button-prev,
+.swiper-button-next {
+    text-transform: uppercase;
+}

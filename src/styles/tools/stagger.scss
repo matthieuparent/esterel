@@ -1,0 +1,17 @@
+@mixin stagger($items, $initial: 0, $step: 0.1, $type: transition) {
+    @if (type-of($items) == 'list') {
+        @for $i from 0 to length($items) {
+            $index: $i + 1;
+            $value: nth($items, $i + 1); // sass list is not array based
+            &:nth-of-type(#{$index}) {
+                #{$type}-delay: #{$initial + ($step * $value)}s;
+            }
+        }
+    } @else {
+        @for $i from 1 through $items {
+            &:nth-of-type(#{$i}) {
+                #{$type}-delay: #{$initial + ($step * $i)}s;
+            }
+        }
+    }
+}

@@ -1,0 +1,43 @@
+/* ==========================================================================
+   WRAPPER / ELEMENT
+   ========================================================================== */
+// Utilisation du css Layout Grid pour faire le wrapper
+.wrapper {
+    display: grid;
+    grid-template-columns:
+        minmax(80px, 1fr) minmax($breakpoint-xs, $breakpoint-xl)
+        minmax(80px, 1fr);
+    grid-column-gap: 0;
+
+    @media (max-width: $breakpoint-lg) {
+        grid-template-columns:
+            minmax(40px, 1fr) minmax($breakpoint-xxs, $breakpoint-xl)
+            minmax(40px, 1fr);
+    }
+
+    @media (max-width: $breakpoint-sm) {
+        grid-template-columns:
+            minmax(20px, 1fr) minmax($breakpoint-xxs, $breakpoint-xl)
+            minmax(20px, 1fr);
+    }
+}
+.wrapper--small {
+    grid-template-columns:
+        minmax(240px, 1fr) minmax($breakpoint-xs, $breakpoint-xl)
+        minmax(240px, 1fr);
+
+    @media (max-width: $breakpoint-md) {
+        grid-template-columns:
+            minmax(60px, 1fr) minmax($breakpoint-xxs, $breakpoint-xl)
+            minmax(60px, 1fr);
+    }
+    @media (max-width: $breakpoint-sm) {
+        grid-template-columns:
+            minmax(20px, 1fr) minmax($breakpoint-xxs, $breakpoint-xl)
+            minmax(20px, 1fr);
+    }
+}
+
+.grid-center {
+    grid-column: 2/3;
+}

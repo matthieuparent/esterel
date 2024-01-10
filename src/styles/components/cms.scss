@@ -1,0 +1,54 @@
+/* ==========================================================================
+   cms / components
+   ========================================================================== */
+
+p .aligncenter {
+    margin: 0 auto;
+    display: block;
+}
+
+.alignleft {
+    float: left;
+    padding-right: 20px;
+}
+
+.text__content,
+.answer__wrapper {
+    ol,
+    ul {
+        padding-left: 0;
+        list-style-type: none;
+        li {
+            position: relative;
+            padding-left: 25px;
+            &::before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: block;
+            }
+        }
+    }
+    ul {
+        li {
+            &::before {
+                content: '';
+                width: 6px;
+                height: 6px;
+
+                border: 1px var(--color-primary) solid;
+                border-radius: 100%;
+                top: 0.5em;
+            }
+        }
+    }
+    ol {
+        counter-reset: my-sec-counter;
+        li {
+            &::before {
+                counter-increment: my-sec-counter;
+                content: counter(my-sec-counter) '.';
+            }
+        }
+    }
+}

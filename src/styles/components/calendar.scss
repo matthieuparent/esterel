@@ -1,0 +1,122 @@
+/* ==========================================================================
+   calendar / components
+   ========================================================================== */
+.mec-calendar {
+    border: none;
+    box-shadow: none;
+    .mec-month-container {
+        display: grid;
+        gap: 10px;
+    }
+    dt {
+        border: 1px #dfdfdf solid !important;
+        background: unset !important;
+        font-size: 14px;
+        width: 50px;
+        height: 50px;
+        border-radius: 100% !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+    .mec-selected-day {
+        background: #af6682 !important;
+        // color: var(--color-black);
+        font-weight: bold;
+    }
+    .mec-event-detailed-time {
+        display: none;
+    }
+    .mec-has-event {
+        a {
+            position: relative;
+            margin: 0;
+            z-index: 2;
+            width: auto;
+            height: auto;
+        }
+        &::after {
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background: rgba(175, 102, 130, 0.2);
+        }
+    }
+    .mec-calendar-row,
+    dl {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(7, 1fr);
+    }
+    .mec-calendar-topsec {
+        display: grid;
+        grid-template-columns: auto 1fr;
+    }
+
+    .mec-calendar-events-side {
+        max-height: 700px;
+        overflow-y: scroll;
+        box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.25);
+    }
+
+    .mec-calendar-table-head dt {
+        border: none !important;
+        background: unset !important;
+        font-size: 14px;
+        width: 50px;
+        height: 50px;
+    }
+    .mec-calendar-table-head dt {
+        border: none !important;
+        background: unset !important;
+        font-size: 14px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .mec-event-footer {
+        display: none;
+    }
+
+    .mec-event-article {
+        border: 1px var(--color-primary-light) solid;
+        padding: 15px 30px;
+        .mec-event-date {
+            @include fluid-type(12px, 16px);
+            color: #787878;
+            margin-bottom: 10px;
+        }
+        .title-quaterny {
+            font-weight: bold;
+            margin: 0;
+        }
+        .mec-event-loc-place {
+            @include fluid-type(12px, 16px);
+            display: flex;
+            gap: 5px;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .mec_learn_more {
+            color: var(--color-tertiary);
+            margin-top: 10px;
+            display: inline-block;
+        }
+    }
+    .mec-calendar-events-sec + .mec-calendar-events-sec {
+        margin-top: 25px;
+    }
+}
+
+.mec-event-image {
+    img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+}
