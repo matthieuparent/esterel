@@ -142,7 +142,7 @@
     text-transform: uppercase;
     color: var(--color-white);
     position: relative;
-    @include fluid-type(14px, 18px);
+    font-size: typo(14px, 18px);
     &.active {
         color: var(--color-primary);
     }

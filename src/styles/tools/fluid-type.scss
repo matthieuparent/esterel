@@ -1,59 +1,53 @@
 /* ==========================================================================
-   fluid-type / mixin
-
-   Génère un font-size fluide entre  2 breakpoints.
-   Par défault, il établira sont calcul avec notre breakpoint xs et lg
-   Il besoin de la grandeur minimum et maximum
-
-   Exemple
-   body {
-        @include fluid-type(16px, 20px);
-   }
-   Nous aurons donc:
-    une typo de 16px en 375px et moins;
-    une typo de 20px en 1440px et plus;
-    et fluide entre 375px et 1440px;
-
-
+   cover / typo
    ========================================================================== */
-@mixin fluid-type(
-    $min-font-size,
-    $max-font-size,
-    $min-bp: $breakpoint-xs,
-    $max-bp: $breakpoint-xl
-) {
-    $u1: unit($min-bp);
-    $u2: unit($max-bp);
-    $u3: unit($min-font-size);
-    $u4: unit($max-font-size);
 
-    @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
-        & {
-            font-size: $min-font-size;
+$html-font-size: 16px;
+@use 'sass:math';
 
-            @media screen and (min-width: $min-bp) {
-                font-size: calc(
-                    #{$min-font-size} + #{strip-unit(
-                            $max-font-size - $min-font-size
-                        )} *
-                        (
-                            (100vw - #{$min-bp}) / #{strip-unit(
-                                    $max-bp - $min-bp
-                                )}
-                        )
-                );
-            }
-            @media screen and (min-width: $max-bp) {
-                font-size: $max-font-size;
-            }
+$default-min-bp: 480px;
+$default-max-bp: 1440px;
+
+@function round($number, $decimals: 0) {
+    $n: 1;
+    @if $decimals > 0 {
+        @for $i from 1 through $decimals {
+            $n: $n * 10;
         }
     }
+    @return math.div(math.round($number * $n), $n);
 }
 
-@function strip-unit($number) {
-    @if type-of($number) == 'number' and not unitless($number) {
-        @return $number / ($number * 0 + 1);
-    }
+@function px-to-rem($px) {
+    $rems: math.div($px, 16px) * 1rem;
+    @return $rems;
+}
 
-    @return $number;
+@function typo(
+    $min-size,
+    $max-size: null,
+    $min-breakpoint: $default-min-bp,
+    $max-breakpoint: $default-max-bp,
+    $unit: vw
+) {
+    @if ($max-size) {
+        $slope: math.div(
+            $max-size - $min-size,
+            $max-breakpoint - $min-breakpoint
+        );
+        $slope-to-unit: round($slope * 100, 2);
+        $intercept-rem: round(
+            px-to-rem($min-size - $slope * $min-breakpoint),
+            2
+        );
+        $min-size-rem: round(px-to-rem($min-size), 2);
+        $max-size-rem: round(px-to-rem($max-size), 2);
+        @return clamp(
+            #{$min-size-rem},
+            #{$slope-to-unit}#{$unit} + #{$intercept-rem},
+            #{$max-size-rem}
+        );
+    } @else {
+        @return round(px-to-rem($min-size), 2);
+    }
 }

@@ -4,7 +4,7 @@
 .button {
     text-transform: uppercase;
     font-family: var(--font-primary);
-    @include fluid-type(14px, 20px);
+    font-size: typo(14px, 20px);
     background-color: var(--color-primary-light);
     color: var(--color-white);
     padding: 15px 18px;

@@ -8,7 +8,7 @@
                         $link = get_sub_field('link_link');  ?>
             <a href="<?php echo esc_url( $link ); ?>" data-scrolly="fromAlpha">
                 <?php if(get_sub_field("link_image_type")) :?>
-                <img src="<?php echo get_template_directory_uri() ?>/dist/images/icons/<?php the_sub_field('link_icon'); ?>.svg"
+                <img src="<?php echo get_template_directory_uri() ?>/dist/assets/icons/<?php the_sub_field('link_icon'); ?>.svg"
                     alt="">
                 <?php else : ?>
                 <?php 

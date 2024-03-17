@@ -1,4 +1,4 @@
-import Swiper from 'swiper/swiper-bundle';
+import Swiper from 'swiper/bundle';
 
 /** Composante Carousel de Timtools */
 export default class Carousel {
@@ -40,6 +40,7 @@ export default class Carousel {
           loop: false,
           pagination: {
             el: this.element.querySelector('.swiper-pagination'),
+            clickable: true,
           },
           breakpoints: {
             768: {
@@ -64,6 +65,7 @@ export default class Carousel {
           loop: true,
           pagination: {
             el: '.swiper-pagination',
+            clickable: true,
           },
           centeredSlides: true,
           breakpoints: {

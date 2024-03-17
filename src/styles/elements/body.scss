@@ -6,7 +6,7 @@
 
 body {
     font-family: var(--font-primary);
-    @include fluid-type(14px, 20px);
+    font-size: typo(14px, 20px);
     color: var(--color-gray);
     line-height: 1.4;
     background: var(--color-white);

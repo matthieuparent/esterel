@@ -51,7 +51,7 @@
 .gform_submission_error,
 .gfield_validation_message {
     color: var(--color-instagram);
-    @include fluid-type(14px, 18px);
+    font-size: typo(14px, 18px);
 }
 
 .gfield {

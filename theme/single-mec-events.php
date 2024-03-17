@@ -38,7 +38,7 @@ $location = reset($location);
                 <p><?php the_content(); ?></p>
             </div>
             <div class="text__image">
-                <img src="<?php echo get_template_directory_uri() ?>/dist/images/temp/single.jpg"
+                <img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/temp/single.jpg"
                     alt="Logo Ville Estérel">
             </div>
         </div>

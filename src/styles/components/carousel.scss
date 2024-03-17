@@ -3,11 +3,11 @@
    ========================================================================== */
 
 .swiper-pagination {
-    margin-top: 90px;
     display: flex;
     justify-content: center;
     gap: var(--spacing-sm);
     .swiper-pagination-bullet {
+        cursor: pointer;
         width: 13px;
         height: 13px;
         border-radius: 100%;
@@ -21,4 +21,37 @@
 .swiper-button-prev,
 .swiper-button-next {
     text-transform: uppercase;
+}
+
+.swiper-options {
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+    justify-content: center;
+}
+
+.button-next,
+.button-prev {
+    cursor: pointer;
+    &.swiper-button-disabled:before {
+        border-color: #c4c4c4;
+    }
+}
+// .button-next {
+// }
+.button-next:before,
+.button-prev:before {
+    border-color: var(--color-primary);
+    border-style: solid;
+    border-width: 0.2em 0.2em 0 0;
+    content: '';
+    display: inline-block;
+    height: 0.8em;
+    position: relative;
+    transform: rotate(45deg);
+    vertical-align: top;
+    width: 0.8em;
+}
+.button-prev:before {
+    transform: rotate(-135deg);
 }

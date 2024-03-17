@@ -86,7 +86,7 @@
         border: 1px var(--color-primary-light) solid;
         padding: 15px 30px;
         .mec-event-date {
-            @include fluid-type(12px, 16px);
+            font-size: typo(12px, 16px);
             color: #787878;
             margin-bottom: 10px;
         }
@@ -95,7 +95,7 @@
             margin: 0;
         }
         .mec-event-loc-place {
-            @include fluid-type(12px, 16px);
+            font-size: typo(12px, 16px);
             display: flex;
             gap: 5px;
             align-items: center;

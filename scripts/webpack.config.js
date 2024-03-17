@@ -1,12 +1,11 @@
 'use strict';
 
 const webpack = require('webpack');
-const autoprefixer = require('autoprefixer');
 const AssetsPlugin = require('assets-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
@@ -14,8 +13,6 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const path = require('path');
 const fs = require('fs');
 
-// Make sure any symlinks in the project folder are resolved:
-// https://github.com/facebookincubator/create-react-app/issues/637
 const appDirectory = fs.realpathSync(process.cwd());
 
 function resolveApp(relativePath) {
@@ -31,13 +28,11 @@ const paths = {
 
 const DEV = process.env.NODE_ENV === 'development';
 
-module.exports = {
+const webpackConfig = {
   bail: !DEV,
   mode: DEV ? 'development' : 'production',
-  // We generate sourcemaps in production. This is slow but gives good results.
-  // You can exclude the *.map files from the build during deployment.
   target: 'web',
-  devtool: DEV ? 'cheap-eval-source-map' : 'source-map',
+  devtool: DEV ? 'eval-cheap-source-map' : 'source-map',
   entry: [paths.appIndexJs],
   output: {
     path: paths.appBuild,
@@ -54,17 +49,17 @@ module.exports = {
         include: paths.appSrc,
       },
       {
-        test: /.s?css$/,
+        test: /\.(sa|sc|c)ss$/,
         use: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-          },
+          DEV ? 'style-loader' : MiniCssExtractPlugin.loader,
+          'css-loader',
           {
             loader: 'postcss-loader',
             options: {
-              ident: 'postcss', // https://webpack.js.org/guides/migrating/#complex-options
-              plugins: () => [autoprefixer()],
+              postcssOptions: {
+                ident: 'postcss', // https://webpack.js.org/guides/migrating/#complex-options
+                plugins: ['autoprefixer'],
+              },
             },
           },
           'sass-loader',
@@ -88,25 +83,25 @@ module.exports = {
           compress: {
             warnings: false,
           },
-          output: {
-            comments: false,
-          },
         },
-        sourceMap: true,
+        extractComments: true,
       }),
     ],
   },
   plugins: [
-    // !DEV && new CleanWebpackPlugin(['dist'], {
-    //   root: process.cwd()
-    // }),
-    new SVGSpritemapPlugin('./src/icons/**/*.svg', {
+    !DEV && new CleanWebpackPlugin(),
+    new SVGSpritemapPlugin('./src/assets/icons/**/*.svg', {
       output: {
-        filename: 'icons/icons.svg',
+        filename: 'assets/icons.svg',
         svgo: {
           plugins: [
-            { removeTitle: true },
-            { removeAttrs: { attrs: '(stroke|fill)' } },
+            {
+              name: 'removeTitle',
+            },
+            {
+              name: 'removeAttrs',
+              params: { attrs: '(stroke|fill)' },
+            },
           ],
         },
       },
@@ -125,14 +120,11 @@ module.exports = {
       DEBUG: false,
     }),
     new CopyPlugin({
-      patterns: [
-        { from: 'src/images/', to: 'images/' },
-        { from: 'src/icons/', to: 'images/icons' },
-        { from: 'src/videos/', to: 'videos/' },
-      ],
+      patterns: [{ from: 'src/assets/', to: 'assets/' }],
     }),
     new AssetsPlugin({
       path: paths.appBuild,
+      removeFullPathAutoPrefix: true,
       filename: 'assets.json',
     }),
     DEV &&
@@ -150,3 +142,5 @@ module.exports = {
       }),
   ].filter(Boolean),
 };
+
+module.exports = webpackConfig;

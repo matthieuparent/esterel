@@ -16,7 +16,7 @@ a {
 .link {
     font-weight: bold;
     font-family: var(--font-primary);
-    @include fluid-type(16px, 20px);
+    font-size: typo(16px, 20px);
     transition: all 0.3s $ease-out-quad;
 
     &--arrow {

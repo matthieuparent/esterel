@@ -30,7 +30,7 @@
         border-radius: 4.5px 0 0 4.5px;
         border-right: none;
         color: rgba(40, 55, 75, 0.3);
-        @include fluid-type(14px, 22px);
+        font-size: typo(14px, 22px);
         padding: 10px;
         width: 50%;
 

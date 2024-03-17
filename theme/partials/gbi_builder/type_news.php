@@ -18,20 +18,21 @@
             <div class="blog__cards">
                 <div class="swiper" data-component="Carousel" data-carousel-type="three-col">
                     <div class=" swiper-wrapper">
+                    <?php 
+                    $args = Array(
+                        'post_type' => 'post',
+                        'posts_per_page' => '5',
+                        'order' => 'DESC'
+                      );
+                    $the_query = new WP_Query( $args ); ?>
 
-                        <?php if( have_rows('posts') ): ?>
-                        <?php while( have_rows('posts') ): 
-                            the_row(); 
-                            ?>
-                        <?php
-                            $featured_posts = get_sub_field('activity');
-                            if( $featured_posts ): ?>
-
-                        <?php foreach( $featured_posts as $post ): 
-
-                                    // Setup this post for WP functions (variable must be named $post).
-                                    setup_postdata($post); ?>
-                        <div class="swiper-slide" data-scrolly="fromBottom">
+<?php if ( $the_query->have_posts() ) : ?>
+	<!-- the loop -->
+	<?php
+	while ( $the_query->have_posts() ) :
+		$the_query->the_post();
+		?>
+<div class="swiper-slide" data-scrolly="fromBottom">
                             <a href="<?php the_permalink(); ?>" class="card">
                                 <div class="card__media">
                                     <?php the_post_thumbnail(); ?>
@@ -48,15 +49,18 @@
                                 </div>
                             </a>
                         </div>
-                        <?php endforeach; ?>
+                        
 
-                        <?php 
-                                // Reset the global post object so that the rest of the page works correctly.
-                                wp_reset_postdata(); ?>
-                        <?php endif; ?>
-                        <?php endwhile; ?>
-                        <?php endif; ?>
+	<?php endwhile; ?>
+	<!-- end of the loop -->
 
+	<!-- pagination here -->
+
+	<?php wp_reset_postdata(); ?>
+
+<?php else : ?>
+	<p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
+<?php endif; ?>
 
 
                     </div>

@@ -21,9 +21,10 @@ include('functions/breadcrumb.php');
 add_action('wp_enqueue_scripts', function () {
     $manifest = json_decode(file_get_contents('dist/assets.json', true));
     $main = $manifest->main;
-    wp_enqueue_style('theme', get_template_directory_uri() . "/dist/" . $main->css, false, null);
-    wp_register_script( 'theme-js', get_template_directory_uri() . "/dist/" . $main->js, null, true, true);
-    wp_enqueue_script('theme-js');
+    if (isset($main->css)) {
+		wp_enqueue_style('theme-css', get_template_directory_uri() . "/dist/" . $main->css,  false, null);
+	}
+    wp_enqueue_script('theme-js', get_template_directory_uri() . "/dist/" . $main->js, null, true, true);
     $translation_array = array( 'templateUrl' => get_template_directory_uri() );
     //after wp_enqueue_script
     wp_localize_script( 'theme-js', 'config', $translation_array );
@@ -45,7 +46,7 @@ function my_login_logo() { ?>
 #login h1 a,
 .login h1 a {
     background-image: url(<?php echo get_stylesheet_directory_uri();
-    ?>/dist/images/logo.png);
+    ?>/dist/assets/images/logo.png);
     height: 80px;
     width: 244px;
     background-size: 244px 80px;

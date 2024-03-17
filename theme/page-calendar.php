@@ -8,7 +8,7 @@ Template Name: Page calendrier
     <div class="wrapper wrapper--small">
         <div class="grid-center">
             <div class="hero__media">
-                <img src="<?php echo get_template_directory_uri() ?>/dist/images/temp/hero.jpg"
+                <img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/temp/hero.jpg"
                     alt="Logo Ville Estérel">
             </div>
         </div>

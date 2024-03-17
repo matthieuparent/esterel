@@ -47,7 +47,7 @@
             display: flex;
             color: white;
             gap: 15px;
-            @include fluid-type(14px, 20px);
+            font-size: typo(14px, 20px);
             font-family: var(--font-secondary);
             font-weight: bold;
             letter-spacing: 0.2em;
@@ -177,7 +177,7 @@
     }
     .title-quaterny {
         margin-bottom: var(--spacing-sm);
-        @include fluid-type(14px, 22px);
+        font-size: typo(14px, 22px);
         font-family: var(--font-primary);
     }
 }
@@ -232,7 +232,7 @@
             @include stagger(6, 0, 0.05);
             display: flex;
             align-items: center;
-            @include fluid-type(14px, 15px);
+            font-size: typo(14px, 15px);
             flex-direction: column;
             text-align: center;
 
@@ -428,7 +428,7 @@
     }
     .quote__icon {
         color: var(--color-secondary);
-        @include fluid-type(80px, 120px);
+        font-size: typo(80px, 120px);
         line-height: 1;
     }
     .title-quaterny {
@@ -496,7 +496,7 @@
 
         position: relative;
         margin-top: calc(var(--border-width) * -1);
-        @include fluid-type(14px, 18px);
+        font-size: typo(14px, 18px);
         overflow: hidden;
 
         .answer__wrapper {
@@ -572,7 +572,7 @@
             }
         }
         .title-cintary {
-            @include fluid-type(20px, 32px);
+            font-size: typo(20px, 32px);
             width: 80%;
         }
         .icon {
@@ -599,7 +599,7 @@
     }
     .question__answer {
         position: relative;
-        @include fluid-type(14px, 18px);
+        font-size: typo(14px, 18px);
         overflow: hidden;
         .answer__wrapper {
             padding-top: var(--spacing-nm);
@@ -681,7 +681,7 @@
             }
         }
         .title-cintary {
-            @include fluid-type(20px, 32px);
+            font-size: typo(20px, 32px);
             width: 80%;
         }
         .icon {
@@ -708,7 +708,7 @@
     }
     .question__answer {
         position: relative;
-        @include fluid-type(14px, 18px);
+        font-size: typo(14px, 18px);
         overflow: hidden;
         .answer__wrapper {
             padding-top: var(--spacing-nm);
@@ -770,7 +770,7 @@
         color: var(--color-white);
         position: relative;
         z-index: 1;
-        @include fluid-type(16px, 34px);
+        font-size: typo(16px, 34px);
         text-align: center;
         font-family: var(--font-secondary);
         font-weight: 700;

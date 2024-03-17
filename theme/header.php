@@ -4,16 +4,20 @@
 <head>
     <title>Estérel</title>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
-
+    <script>
+    var iconsPath = '<?php bloginfo('template_url'); ?>/dist/';
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#603cba">
-    <meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php bloginfo('template_url'); ?>/dist/assets/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="<?php bloginfo('template_url'); ?>/dist/assets/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="<?php bloginfo('template_url'); ?>/dist/assets/favicons/favicon-16x16.png">
+<link rel="manifest" href="<?php bloginfo('template_url'); ?>/dist/assets/favicons/site.webmanifest">
+<link rel="mask-icon" href="<?php bloginfo('template_url'); ?>/dist/assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/dist/assets/favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-config" content="<?php bloginfo('template_url'); ?>/dist/assets/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
 
     <?php wp_head(); ?>
 </head>
@@ -42,7 +46,7 @@ $classtoAdd = get_field("page_config_hero_color", $GLOBALS['homeOpt']) ? "highli
                     <span></span>
                 </button>
                 <div class="header__brand">
-                    <a href="/"><img src="<?php echo get_template_directory_uri() ?>/dist/images/logo.png"
+                    <a href="/"><img src="<?php echo get_template_directory_uri() ?>/dist/assets/images/logo.png"
                             alt="Logo Ville Estérel"></a>
                 </div>
                 <nav class="nav-primary" data-component="SubNav">
@@ -60,19 +64,19 @@ $classtoAdd = get_field("page_config_hero_color", $GLOBALS['homeOpt']) ? "highli
                         <ul>
                             <li>
                                 <a href="#" target="_blank">
-                                    <img src="<?php echo get_template_directory_uri() ?>/dist/images/icons/facebook-color.svg"
+                                    <img src="<?php echo get_template_directory_uri() ?>/dist/assets/icons/facebook-color.svg"
                                         alt="">
                                 </a>
                             </li>
                             <li>
                                 <a href=" #">
-                                    <img src="<?php echo get_template_directory_uri() ?>/dist/images/icons/temp.svg"
+                                    <img src="<?php echo get_template_directory_uri() ?>/dist/assets/icons/temp.svg"
                                         alt="">
                                 </a>
                             </li>
                             <li>
                                 <!-- <a href=" #">
-                                    <img src="<?php echo get_template_directory_uri() ?>/dist/images/icons/search.svg"
+                                    <img src="<?php echo get_template_directory_uri() ?>/dist/assets/icons/search.svg"
                                         alt="">
                                 </a> -->
                             </li>
@@ -102,19 +106,19 @@ $classtoAdd = get_field("page_config_hero_color", $GLOBALS['homeOpt']) ? "highli
                     <ul>
                         <li>
                             <a href="https://www.facebook.com/VilleEsterel" target="_blank">
-                                <img src="<?php echo get_template_directory_uri() ?>/dist/images/icons/facebook-color.svg"
+                                <img src="<?php echo get_template_directory_uri() ?>/dist/assets/icons/facebook-color.svg"
                                     alt="">
                             </a>
                         </li>
                         <li>
                             <a href="https://www.instagram.com/villedesterel/" target="_blank">
-                                <img src="<?php echo get_template_directory_uri() ?>/dist/images/icons/instagram-color.svg"
+                                <img src="<?php echo get_template_directory_uri() ?>/dist/assets/icons/instagram-color.svg"
                                     alt="">
                             </a>
                         </li>
                         <li>
                             <div data-component="Search">
-                                <img src="<?php echo get_template_directory_uri() ?>/dist/images/icons/search.svg"
+                                <img src="<?php echo get_template_directory_uri() ?>/dist/assets/icons/search.svg"
                                     alt="">
                             </div>
                         </li>

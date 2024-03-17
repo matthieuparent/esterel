@@ -144,7 +144,7 @@ class Settings_Welcome {
 								<p>The Simple Sitemap plugin is one of the easiest way to add a comprehensive HTML sitemap to your website. To get started quickly, follow these steps and you'll be creating a sitemap in no time at all. For full instructions take a look at the plugin <a href="https://wpgoplugins.com/document/simple-sitemap-pro-documentation/" target="_blank">documentation</a>.</p>
 								<div class="getting-start-gen-con">
 									<div class="getting-start-gen">
-										<h3 style="margin-top:0;display:flex;align-items:center;"><span><img style="margin:0 6px 2px 0;width:40px;" src="<?php echo $this->module_roots['uri'] . '/lib/assets/images/icons/1s.svg'; ?>" /></span><span> Create an HTML Sitemap Page</span></h3>
+										<h3 style="margin-top:0;display:flex;align-items:center;"><span><img style="margin:0 6px 2px 0;width:40px;" src="<?php echo $this->module_roots['uri'] . '/lib/assets/icons/1s.svg'; ?>" /></span><span> Create an HTML Sitemap Page</span></h3>
 										<p>The first thing to do is to create a <a href="<?php echo $this->admin_url . '/post-new.php?post_type=page'; ?>" target="_blank">new page</a> that you want to display the sitemap on. Then, enter a page title. e.g. "Sitemap".</p>
 									</div>
 									<div class="getting-start-img">
@@ -153,7 +153,7 @@ class Settings_Welcome {
 								</div>
 								<div class="getting-start-gen-con">
 									<div class="getting-start-gen">
-									<h3 style="margin-top:0;display:flex;align-items:center;"><span><img style="margin:0 6px 2px 0;width:40px;" src="<?php echo $this->module_roots['uri'] . '/lib/assets/images/icons/2s.svg'; ?>" /></span><span> Add a Sitemap Block or Shortcode</span></h3>
+									<h3 style="margin-top:0;display:flex;align-items:center;"><span><img style="margin:0 6px 2px 0;width:40px;" src="<?php echo $this->module_roots['uri'] . '/lib/assets/icons/2s.svg'; ?>" /></span><span> Add a Sitemap Block or Shortcode</span></h3>
 										<p>There are two ways to add a sitemap into a post or page:</p>
 										<ul style="list-style:initial;padding-left:20px;">
 											<li><a href="https://wordpress.org/support/article/adding-a-new-block/" target="_blank">Blocks</a></li>
@@ -168,7 +168,7 @@ class Settings_Welcome {
 								</div>
 								<div class="getting-start-gen-con">
 									<div class="getting-start-gen">
-									<h3 style="margin-top:0;display:flex;align-items:center;"><span><img style="margin:0 6px 2px 0;width:40px;" src="<?php echo $this->module_roots['uri'] . '/lib/assets/images/icons/3s.svg'; ?>" /></span><span> Customize & Display</span></h3>
+									<h3 style="margin-top:0;display:flex;align-items:center;"><span><img style="margin:0 6px 2px 0;width:40px;" src="<?php echo $this->module_roots['uri'] . '/lib/assets/icons/3s.svg'; ?>" /></span><span> Customize & Display</span></h3>
 										<p>Once you've inserted a Sitemap block into the editor you can configure block options via the settings sidebar panel to the right.</p>
 										<p>There are many options to choose from so take your time looking through each settings panel.</p>
 										<p>If you're using the sitemap shortcodes then take a look <a href="https://wpgoplugins.com/document/simple-sitemap-pro-documentation/#simple-sitemap-shortcodes" target="_blank">here</a> for all the various shortcodes and attributes that are available.</p>
@@ -179,7 +179,7 @@ class Settings_Welcome {
 								</div>
 								<div class="getting-start-gen-con">
 									<div class="getting-start-gen">
-									<h3 style="margin-top:0;display:flex;align-items:center;"><span><img style="margin:0 6px 2px 0;width:40px;" src="<?php echo $this->module_roots['uri'] . '/lib/assets/images/icons/4s.svg'; ?>" /></span><span> Let's Get Started!</span></h3>
+									<h3 style="margin-top:0;display:flex;align-items:center;"><span><img style="margin:0 6px 2px 0;width:40px;" src="<?php echo $this->module_roots['uri'] . '/lib/assets/icons/4s.svg'; ?>" /></span><span> Let's Get Started!</span></h3>
 										<p>OK, time to get started. What would you like to do first? <span class="dashicons dashicons-smiley"></span></p>
 										<div>
 											<div><a class="plugin-btn get-started-btn" href="<?php echo $this->admin_url . '/post-new.php?post_type=page'; ?>" target="_blank"><span style="margin:0 -2px 0 3px;width:18px;height:18px;" class="dashicons dashicons-arrow-right-alt2"></span><span class="get-started-txt">Add a new Sitemap page</span></a></div>
